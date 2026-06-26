@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server.js",
     "build:image_build": "ibmcloud ce buildrun submit --build bob-codeengine-sample-build --wait",
-    "build:update_app": "ibmcloud ce application update --name bob-codeengine-sample-app --wait",
+    "build:update_app": "ibmcloud ce application update --name bob-codeengine-sample-app --image private.jp.icr.io/ce--6b4c2-1e6cl2vzbcl7/build-bob-codeengine-sample-build:latest --wait",
     "build": "npm run build:image_build && npm run build:update_app",
     "security:verify": "node scripts/security-verify.js",
     "security:verify:simple": "node scripts/security-verify.js --simple",
