@@ -1,5 +1,10 @@
 {
+  "name": "ibm-ce-simple-nodejs-hono-base",
+  "version": "1.0.0",
+  "description": "This is a simple Node.js Hono IBM Code Engine base repository.",
+  "main": "server.js",
   "scripts": {
+    "start": "node server.js",
     "security:verify": "node scripts/security-verify.js",
     "security:verify:simple": "node scripts/security-verify.js --simple",
     "security:verify:testrun": "node scripts/security-verify.js --test-run",
@@ -10,6 +15,21 @@
   },
   "simple-git-hooks": {
     "pre-commit": "node scripts/pre-commit.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1ft-seabass/ibm-ce-simple-nodejs-hono-base.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/1ft-seabass/ibm-ce-simple-nodejs-hono-base/issues"
+  },
+  "homepage": "https://github.com/1ft-seabass/ibm-ce-simple-nodejs-hono-base#readme",
+  "dependencies": {
+    "hono": "^4.0.0",
+    "@hono/node-server": "^1.0.0"
   },
   "devDependencies": {
     "@secretlint/secretlint-rule-preset-recommend": "^13.0.2",
