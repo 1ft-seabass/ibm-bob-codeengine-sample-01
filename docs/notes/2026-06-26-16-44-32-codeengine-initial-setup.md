@@ -55,16 +55,16 @@ IBM Bob IDE（VSCode 相当のコーディングエージェント）から IBM 
 |------|------|
 | `ibmcloud` CLI | v2.45.0 インストール済み |
 | `code-engine` プラグイン | v1.62.6 を `ibmcloud plugin install code-engine` でインストール |
-| ログイン | `seigo@1ft-seabass.jp` / リージョン `jp-tok` |
+| ログイン | `YOUR_IBM_CLOUD_EMAIL` / リージョン `YOUR_REGION` |
 | リソースグループ | `default` |
-| プロジェクト | `ce-project-7c`（ID: `0638879c-b1ff-47e8-8f52-fc4c5525a6dc`） |
+| プロジェクト | `YOUR_CE_PROJECT_NAME`（ID: `YOUR_CE_PROJECT_ID`） |
 
 ### 実行したコマンド
 
 ```bash
 # リソースグループ・プロジェクトの選択
 ibmcloud target -g default
-ibmcloud ce project select --id 0638879c-b1ff-47e8-8f52-fc4c5525a6dc
+ibmcloud ce project select --id YOUR_CE_PROJECT_ID
 
 # アプリの作成（ビルド + デプロイを一括）
 ibmcloud ce application create \
@@ -82,8 +82,8 @@ ibmcloud ce application create \
 |------|-----|
 | アプリ名 | `bob-codeengine-sample-app` |
 | ビルド設定名 | `bob-codeengine-sample-build`（`build create` で事前作成済み） |
-| 公開 URL | `https://bob-codeengine-sample-app.1e6cl2vzbcl7.jp-tok.codeengine.appdomain.cloud` |
-| イメージ保存先 | `private.jp.icr.io/ce--6b4c2-1e6cl2vzbcl7/app-bob-codeengine-sample-app:...` |
+| 公開 URL | `https://YOUR_APP_NAME.YOUR_CLUSTER_ID.YOUR_REGION.codeengine.appdomain.cloud` |
+| イメージ保存先 | `private.YOUR_REGION.icr.io/YOUR_NAMESPACE/app-YOUR_APP_NAME:...` |
 | スケール | min=0 / max=10（デフォルト） |
 | CPU / メモリ | 1 vCPU / 4G（デフォルト） |
 
@@ -127,7 +127,7 @@ CE_APP_NAME=bob-codeengine-sample-app
 
 ## 関連ドキュメント
 
-- [Code Engine アプリ URL](https://bob-codeengine-sample-app.1e6cl2vzbcl7.jp-tok.codeengine.appdomain.cloud)
+- Code Engine アプリ URL: `https://YOUR_APP_NAME.YOUR_CLUSTER_ID.YOUR_REGION.codeengine.appdomain.cloud`
 - [IBM Code Engine トラブルシューティング](https://cloud.ibm.com/docs/codeengine?topic=codeengine-troubleshoot-build)
 - [Code Engine Hono ベース導入ノート](./2026-06-26-15-31-02-codeengine-hono-base-setup.md)
 
