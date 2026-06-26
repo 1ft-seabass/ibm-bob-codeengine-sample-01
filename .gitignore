@@ -1,0 +1,11 @@
+# gitleaks binary (large binary file)
+bin/
+
+# pre-commit 実行ログ（ローカル専用）
+.logs/
+
+# Node.js
+node_modules/
+
+# 作業用一時フォルダ
+tmp/
