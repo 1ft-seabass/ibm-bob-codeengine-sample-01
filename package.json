@@ -5,8 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "build:image_build": "ibmcloud ce buildrun submit --build bob-codeengine-sample-build --wait",
-    "build:update_app": "ibmcloud ce application update --name bob-codeengine-sample-app --image private.jp.icr.io/ce--6b4c2-1e6cl2vzbcl7/build-bob-codeengine-sample-build:latest --wait",
+    "build:image_build": "dotenv -e .env.ce -- ibmcloud ce buildrun submit --build $CE_BUILD_NAME --wait",
+    "build:update_app": "dotenv -e .env.ce -- ibmcloud ce application update --name $CE_APP_NAME --image $CE_BUILD_IMAGE --wait",
     "build": "npm run build:image_build && npm run build:update_app",
     "security:verify": "node scripts/security-verify.js",
     "security:verify:simple": "node scripts/security-verify.js --simple",
@@ -36,6 +36,7 @@
   },
   "devDependencies": {
     "@secretlint/secretlint-rule-preset-recommend": "^13.0.2",
+    "dotenv-cli": "^8.0.0",
     "secretlint": "^13.0.2",
     "simple-git-hooks": "^2.13.1"
   }
