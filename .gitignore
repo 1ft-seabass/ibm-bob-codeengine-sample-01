@@ -111,3 +111,6 @@ bin/
 
 # temporary working folder
 tmp/
+
+# Code Engine environment variables (local only)
+.env.ce
